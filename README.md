@@ -35,9 +35,10 @@ this tool help you to anlysis any articles or speeches you are intersted
 ## 🛠️ 技术亮点：透明、可解释、合规  
 
 ### 1. 政策分析师友好设计  
+![sentences_paragraph](https://github.com/user-attachments/assets/956f0028-eadb-47bc-b7a5-9e9540ea4042)
 ```r
 # 动态段落分割（用户可调参数）
-![sentences_paragraph](https://github.com/user-attachments/assets/ff3804c0-643e-4fa3-953a-68383b6721da)
+sliderInput("n_sentences_paragraph", "Set Sentences per Paragraph", 1, 10, 6)
 ```
 - **灵活适应场景**：  
   | 段落长度 | 适用场景                  |  
