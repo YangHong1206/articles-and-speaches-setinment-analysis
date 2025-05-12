@@ -1,5 +1,3 @@
-# articles-and-speaches-setinment-analysis
-this tool help you to anlysis any articles or speeches you are intersted
 # 🔍 文本情感显微镜 |  Speech and articles Emotion and sentiment Analyzer  
 **基于段落动态分割的NRC情感分析工具**  
 → [在线Demo] | [API文档] | [政策分析案例库] ←  
@@ -91,4 +89,93 @@ shiny::runGitHub("your_repo")
 
 ## 开发者承诺  
 > "我们坚信：**情绪数据应是透明的、可追溯的、服务于公共利益的**"  
-> —— 通过开源代码([检查合规性](link))和学术论文([下载PDF](link))践行这一使命  
+> —— 通过开源代码践行这一使命  
+
+
+
+
+
+
+# 🔍 政治文本情感显微镜 | Policy Text Emotion Profiler  
+**基于动态段落分割的NRC情感分析系统 | NRC Sentiment Analysis with Dynamic Segmentation**  
+
+---
+
+## 🌟 为什么选择这个工具？ | Why Choose This Tool?  
+### 中文版  
+**传统工具瓶颈**：  
+❌ 单一情感标签无法解析复杂演讲和文章中的 **矛盾情绪共存现象**  
+❌ 静态全局分析忽视 **关键段落的情绪爆发点**（如危机声明中的恐惧峰值）  
+
+**核心创新**：  
+✅ **动态段落追踪**：自由分割文本（1-10句/段），捕捉情绪演变细节  
+✅ **冲突情绪解构**：识别同一段落中的对抗性情绪（如段落7：愤怒6.2 + 信任4.5）  
+
+---
+
+### English Version
+**Limitations of Traditional Tools**:  
+❌ Single emotion labels fail to **detect mixed feelings** in speeches and articles  
+❌ Fixed-length analysis misses **critical emotional spikes** (e.g. fear surge in crisis statements)  
+
+**Key Innovations**:  
+✅ **Dynamic Paragraph Tracking**: Split text flexibly (1-10 sentences/para) to reveal emotional shifts  
+✅ **Conflicting Emotion Detection**: Identify opposing feelings in the same paragraph (e.g. Para7: Anger 6.2 + Trust 4.5)  
+
+![情感分布案例 | Case Study]
+
+---
+
+## 🛠️ 技术亮点 | Technical Features  
+### 中文版  
+```r
+# 动态段落分割（用户可调参数）  
+sliderInput("n_sentences_paragraph", "设置每段句子数", 1, 10, 6)
+```  
+**应用场景适配**：  
+| 段落长度 | 适用场景                  |  
+|----------|-------------------------|  
+| 1句/段   | 短声明/口号精准分析       |  
+| 6句/段   | 议会辩论段落情绪追踪      |  
+
+---
+
+### English Version
+```r
+# Dynamic paragraph control  
+sliderInput("n_sentences_paragraph", "Sentences per Paragraph", 1, 10, 6)
+```  
+**Scenario Adaptability**:  
+| Paragraph Length | Best For                   |  
+|------------------|---------------------------|  
+| 1 sentence       | Short slogans/statements  |  
+| 6 sentences      | Parliamentary debates     |  
+
+---
+
+## 📊 快速开始 | Quick Start  
+### 中文版  
+```bash
+# Docker一键部署（推荐生产环境）  
+docker run -p 3838:3838 yourname/policy-emotion:latest
+```  
+**三步分析法**：  
+1. 上传文档 → 2. 调整段落长度 → 3. 下载PDF报告  
+
+---
+
+### English Version (IELTS 6.5+)  
+```bash
+# One-click Docker deployment  
+docker run -p 3838:3838 yourname/policy-emotion:latest
+```  
+**3-Step Analysis**:  
+1. Upload files → 2. Adjust paragraph length → 3. Export PDF reports  
+
+---
+
+## ⚠️ 注意事项 | Critical Notes  
+1. **术语一致性**：英文版保留专业术语原文（如NRC, GDPR）  
+2. **文化差异处理**：将"议会"统一译为"Parliament"而非"Congress"  
+3. **可访问性**：添加`alt text`描述所有图表（满足WCAG 2.1标准）  
+```mark
